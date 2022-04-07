@@ -23,31 +23,75 @@ namespace LinqExercise
              * 
              */
 
-            //Print the Sum and Average of numbers
+            //Print the Sum and Average of numbers -DONE////
+            var sum = numbers.Sum();
+            var avg = numbers.Average();  
+            Console.WriteLine($"the sum of the numbers:{sum}");
+            Console.WriteLine($"The average of the numbers:{avg}");
 
-            //Order numbers in ascending order and decsending order. Print each to console.
+            //Order numbers in ascending order and decsending order. Print each to console. (list needs foreach loop)-DONE///
+            var ascend = numbers.OrderBy(x => x);
+            foreach (var x in ascend)
+            {
+                Console.WriteLine($"Ascending numbers:{x}");
+            }
+            Console.WriteLine("------------------");
+            var decsend = numbers.OrderByDescending(z => z);
+            foreach (var z in decsend)
+            {
 
-            //Print to the console only the numbers greater than 6
+                Console.WriteLine($"Decsending numbers:{z}");
 
-            //Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
+            }
 
-            //Change the value at index 4 to your age, then print the numbers in decsending order
+           
+            //Print to the console only the numbers greater than 6-DONE////
+            var lgerThanSix = numbers.Where(x => x > 6);
+            foreach (var x in lgerThanSix)
+            {
+                Console.WriteLine($"post numbers larger than six: {x}"); 
+            }
+
+            //Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!** -DONE//////
+            foreach (var z in decsend.Take (4))
+            {
+                    Console.WriteLine($"Print four numbers: {z}");
+            }
+
+            //, then print the numbers in decsending order   ///??????
+            // go to the numbers at the top and go to 4th index number listed (1-9). change the 4th index to your age. 
+            // Change the value at index 4 to your age
+            // ??????
+            Array.switch(4,35); //???????????????????????????????????????????????
+            var myAgeChange = numbers.OrderByDescending(age => age);
+            foreach (var ageChange in myAgeChange)
+            {
+                Console.WriteLine($"Edit to Age change along with descending numbers: {ageChange}");
+            }
 
             // List of employees ***Do not remove this***
             var employees = CreateEmployees();
 
             //Print all the employees' FullName properties to the console only if their FirstName starts with a C OR an S.
             //Order this in acesnding order by FirstName.
+            var cFullNames = employees.???
 
             //Print all the employees' FullName and Age who are over the age 26 to the console.
             //Order this by Age first and then by FirstName in the same result.
+            var overTwentySix = employees.??
 
             //Print the Sum and then the Average of the employees' YearsOfExperience
             //if their YOE is less than or equal to 10 AND Age is greater than 35
+            var sumAndAvgOfEmpYOE = employees. ??
 
             //Add an employee to the end of the list without using employees.Add()
 
-            
+                employees = employees.Append(new Employee("Hannah", "Willis", 35, 0)).ToList();
+            foreach (var teamMember in employees)
+            {
+                Console.WriteLine($"New Team member; {teamMember.FullName}");
+            }
+
             Console.WriteLine();
 
             Console.ReadLine();
